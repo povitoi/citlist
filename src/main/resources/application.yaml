@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/citlist-db
+    driver-class-name: org.postgresql.Driver
+    username: admin
+    password: root
+  flyway:
+    schemas:
+      - citlist
+      - public
