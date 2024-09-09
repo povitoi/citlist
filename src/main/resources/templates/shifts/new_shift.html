@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Смена</title>
+</head>
+<body>
+<h1>Смена открыта</h1>
+<div th:if="${shiftOpenedError}">
+    <h2 th:text="${shiftOpenedError}"></h2>
+</div>
+<table>
+    <thead>
+    <tr>
+        <th>Имя</th>
+        <th>Фамилия</th>
+        <th>Отчество</th>
+        <th>Номер телефона</th>
+        <th>Адрес</th>
+        <th>Марка</th>
+        <th>Модель</th>
+        <th>Кузов</th>
+        <th>Цвет</th>
+        <th>Номерной знак</th>
+        <th>Описание</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="record : ${records}">
+        <td th:text="${record.firstName()}"></td>
+        <td th:text="${record.lastName()}"></td>
+        <td th:text="${record.patronymic()}"></td>
+        <td th:text="${record.phoneNumber()}"></td>
+        <td th:text="${record.address()}"></td>
+        <td th:text="${record.brand()}"></td>
+        <td th:text="${record.model()}"></td>
+        <td th:text="${record.body()}"></td>
+        <td th:text="${record.color()}"></td>
+        <td th:text="${record.tailNumber()}"></td>
+        <td th:text="${record.description()}"></td>
+    </tr>
+    </tbody>
+</table>
+<a th:href="@{/shifts/new_record}">Создать запись</a>
+<a th:href="@{/shifts/close_shift}">Закрыть смену</a>
+</body>
+</html>

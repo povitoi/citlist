@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Смена закрыта</title>
+</head>
+<body>
+<h1>Смена закрыта</h1>
+<h2>Статистика за смену</h2>
+<label>
+    Всего записей:
+    <input type="text" name="records" readonly th:value="${recordCount}">
+</label><br>
+<label>
+    Отметившихся:
+    <input type="text" name="citizens" readonly th:value="${citizenCount}">
+</label><br>
+<lable>
+    Из них на транспорте:
+    <input type="text" name="transports" readonly th:value="${transportCount}">
+</lable><br>
+<a th:href="@{/}">На главную</a>
+</body>
+</html>

@@ -1,0 +1,39 @@
+services:
+  app:
+    image: openjdk:17
+    container_name: citlist-app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURSE_URL: jdbc:postgresql://db:5432/citlist-db
+      SPRING_DATASOURCE_USERNAME: admin
+      SPRING_DATASOURCE_PASSWORD: root
+    depends_on:
+      - db
+    networks:
+      - citlist-network
+
+
+  db:
+    image: postgres:16
+    container_name: citlist-db
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: citlist
+    ports:
+      - "5432:5432"
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    networks:
+      - citlist-network
+
+volumes:
+  db-data:
+
+networks:
+  citlist-network:
+    driver: bridge

@@ -11,7 +11,6 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(schema = "citlist", name = "t_citizen")
 public class Citizen {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -23,10 +22,9 @@ public class Citizen {
     @Column(name = "c_patronymic")
     private String patronymic;
 
-    @Column(name = "c_phone_number", nullable = true)
+    @Column(name = "c_phone_number", nullable = false)
     private String phoneNumber;
 
-    @Column(name = "c_address", nullable = true)
+    @Column(name = "c_address", nullable = false)
     private String address;
-
 }

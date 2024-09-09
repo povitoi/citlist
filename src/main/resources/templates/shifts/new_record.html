@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Новая запись</title>
+</head>
+<body>
+<h1>Новая запись</h1>
+<form method="post" th:action="@{/shifts/new_record}">
+    <label>
+        Имя:<input type="text" name="firstName"><br/>
+    </label>
+    <label>
+        Фамилия:<input type="text" name="lastName"><br/>
+    </label>
+    <label>
+        Отчество:<input type="text" name="patronymic"><br/>
+    </label>
+    <label>
+        Телефонный номер:<input type="tel" name="phoneNumber"><br/>
+    </label>
+    <label>
+        Адрес:<input type="text" name="address"><br/>
+    </label>
+    <label>
+        Марка:<input type="text" name="brand"><br/>
+    </label>
+    <label>
+        Модель:<input type="text" name="model"><br/>
+    </label>
+    <label>
+        Номер машины:<input type="text" name="tailNumber"><br/>
+    </label>
+    <label>
+        Цвет машины:<input type="text" name="color"><br/>
+    </label>
+    <label>
+        Кузов:<input type="text" name="body"><br/>
+    </label>
+    <label>
+        <button type="submit">Записать</button>
+    </label>
+</form>
+</body>
+</html>

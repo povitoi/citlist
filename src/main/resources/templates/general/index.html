@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Главная</title>
+</head>
+<body>
+<h1>Статистика по количеству записей в базе данных</h1>
+<table>
+    <tbody>
+    <tr>
+        <td>Местных жителей:</td>
+        <td th:text="${citizenCount}"></td>
+    </tr>
+    <tr>
+        <td>Автомобилей:</td>
+        <td th:text="${transportCount}"></td>
+    </tr>
+    </tbody>
+</table>
+<a th:href="@{/shifts/new_shift}">Открыть смену</a>
+</body>
+</html>

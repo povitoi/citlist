@@ -4,6 +4,9 @@ spring:
     driver-class-name: org.postgresql.Driver
     username: admin
     password: root
+  sql:
+    init:
+      mode: always
   flyway:
     schemas:
       - citlist
